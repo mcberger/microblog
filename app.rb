@@ -9,7 +9,6 @@ use Rack::Flash, :sweep =>true
 
 set :database, "sqlite3:Micrapost_db.sqlite3"
 
-
 get '/' do 
 	@title = 'Home'
 	erb :home
@@ -41,11 +40,11 @@ post '/login' do
 	if user && user.password == params[:password]
 		session[:user_id] = user.id
 		flash[:notice] = "You've been signed in successfully."
-		redirect #{profile}"/#"
+		redirect '/profile'
 	else
 		flash[:alert] = "There was a problem signing you in."
 	end
-	redirect '/login'
+	redirect '/home'
 end
 
 
