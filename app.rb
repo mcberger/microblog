@@ -52,7 +52,7 @@ post '/login' do
 	else
 		flash[:alert] = "There was a problem signing you in."
 	end
-	redirect '/login'
+	redirect '/home'
 end
 
 
