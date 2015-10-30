@@ -10,6 +10,11 @@ use Rack::Flash, :sweep =>true
 set :database, "sqlite3:Micrapost_db.sqlite3"
 
 
+get '/' do 
+	@title = 'home'
+	erb :home
+end
+
 # post for home login
 post '/login' do
 	puts "my params are" + params.inspect
@@ -23,4 +28,6 @@ post '/login' do
 	end
 	redirect '/login'
 end
+
+
 
