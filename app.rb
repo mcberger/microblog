@@ -19,8 +19,16 @@ get '/signup' do
 	erb :signup
 end
 
+post '/signup' do
+	@new_user = User.create(fname: params[:fname], lname: params[:lname], username: params[:username], email: params[:email], password: params[:password], gender: params[:gender], birthday: params[:birthday], country: params[:country], city: params[:city])
+	puts @new_user
+	redirect "/"
+end
+
 get '/profile' do
-	@title = "@user"
+
+	@currentUser = User.find(session[:user_id])
+	@title = @currentUser.fname
 	erb :profile
 end
 
@@ -36,11 +44,11 @@ end
 # post for home login
 post '/login' do
 	puts "my params are" + params.inspect
-	user = User.where(username: params[:username]).first
-	if user && user.password == params[:password]
-		session[:user_id] = user.id
+	@user = User.where(username: params[:username]).first
+	if @user && @user.password == params[:password]
+		session[:user_id] = @user.id
 		flash[:notice] = "You've been signed in successfully."
-		redirect '/profile'
+		redirect "/profile"
 	else
 		flash[:alert] = "There was a problem signing you in."
 	end
