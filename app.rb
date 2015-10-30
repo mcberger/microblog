@@ -9,7 +9,6 @@ use Rack::Flash, :sweep =>true
 
 set :database, "sqlite3:Micrapost_db.sqlite3"
 
-
 get '/' do 
 	@title = 'home'
 	erb :home
