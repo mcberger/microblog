@@ -5,12 +5,49 @@
 }
 
 #banner img {
-	width: 100%
+	width: 100%;
+	margin-top: 100px;
+}
+
+#login {
+	font-size: 30px;
+	font-family: arial narrow;
+	
+}
+
+.login {
+	line-height: 25px;
+	width: 200px;
+	font-size: 30px;
+	font-family: arial narrow;
 }
 
 #signup {
 	position: absolute;
 	right: 10px;
 	top: 0px;
+	font-family: arial narrow;
+	font-size: 30px;
 }
 
+#ill, #ams {
+	margin-top: 150px;
+	width: 35%;
+
+}
+
+#ill img, #ams img {
+	width: 100%;
+}
+
+#ill {
+	float: left;
+	padding-left: 75px;
+
+
+}
+
+#ams {
+	float: right;
+	padding-right: 75px;
+}
