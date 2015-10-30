@@ -13,22 +13,3 @@ get '/' do
 	@title = 'Home'
 	erb :home
 end
-
-get '/signup' do
-	@title = "Sign Up"
-	erb :signup
-end
-
-get '/profile' do
-	@title = "@user"
-	erb :profile
-end
-
-get '/account' do
-	@title = "Account"
-	erb :account
-end
-
-get '/postfeed' do
-	@title = "Feed"
-end
