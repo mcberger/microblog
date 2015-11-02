@@ -1,23 +1,27 @@
+<head>
+	<style type="text/css">
+		#menu {
+			display: none
+		}
+	</style>
+</head>
 <p id="signup">
 	Need an Account? <a href="/signup">Sign Up!</a>
 </p>
 
-<div id="banner"> 
-	<img src="/images/illams.jpg">
-</div>
 <center>
 	<div id="login">
-	<!-- make a link too signup.erb -->
 		<form method="POST" action="/login">
 			<label for="username">User name</label><br>
 			<input type="text" name="username" class="login"><br>
 			<label for="password">Password</label><br>
-			<input type="password" name="password" class="login"><br>
+			<input type="password" name="password" class="login"><br><br>
 			<button class="login">Submit</button>
 			
 		</form>
 	</div>
 </center>
+
 
 <div id="ill">
 	<img src="images/ill.jpg" class="illiam">

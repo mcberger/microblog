@@ -1,53 +1,153 @@
+/*styling for the general layout*/
+/*logo at top*/
 #banner {
-	left: 0px;
-	top: 0px;
+/*	left: 0px;
+	top: 0px;*/
 	width: 100%;
 }
 
 #banner img {
 	width: 100%;
-	margin-top: 100px;
+	position: relative;
+/*	z-index: -10;*/
+/*	margin-top: 125px;*/
+}
+/*navigator menu*/
+#menu {
+	font-size: 25px;
+	text-align: center;
+	line-height: 30px;
+	padding-bottom: 10px;
+}
+#menu > ul > li {
+	display: inline;
+	position: relative;
 }
 
-#login {
+#menu >ul >li > ul {
+	position: absolute;
+	visibility: hidden;
+	top: 30px;
+	left: -250px;
+}
+
+#menu > ul > li:hover > ul, #menu > ul > li > ul:hover {
+	visibility: visible;
+	width: 500px;
+}
+
+#menu >ul > li > ul >li {
+	display: inline;
+	list-style: none;
+
+}
+
+	a.menu:link {
+		color: rgb(135, 19, 20);
+	}
+	a.menu:visited {
+		color: rgb(135, 19, 20);
+	}
+	a.menu:hover {
+		border: 1px solid black;
+		background-color: black;
+		color: white;
+		width: 500%;
+	}
+/*styling of forms on /home and /signup*/
+#login, #join {
 	font-size: 30px;
 	font-family: arial narrow;
-	
+	position: relative;
+/*	position: middle;*/
+	top: 75px;
 }
-
+/*try to style radio button on /signup, vertically center, make bigger, not working
+.radio {
+	line-height: 70px;
+	vertical-align: center;
+	width: 100%;
+	height: 2em;
+}*/
+/*labels*/
 .login {
-	line-height: 25px;
+	line-height: 35px;
 	width: 200px;
 	font-size: 30px;
 	font-family: arial narrow;
 }
-
+/*sign up link on /home*/
 #signup {
 	position: absolute;
+	top: 150px;
 	right: 10px;
-	top: 0px;
+/*	top: 0px;*/
 	font-family: arial narrow;
 	font-size: 30px;
 }
-
+/*image layout in their individual divs on /home*/
 #ill, #ams {
+	position: relative;
+	top: 25px;
 	margin-top: 150px;
 	width: 35%;
-
 }
-
-#ill img, #ams img {
-	width: 100%;
-}
-
 #ill {
 	float: left;
 	padding-left: 75px;
-
-
 }
-
 #ams {
 	float: right;
 	padding-right: 75px;
+}
+/*image specifics*/
+#ill img, #ams img {
+	width: 100%;
+}
+/*styling of /signup
+images layout*/
+#joinbg {
+	min-width: 1024;
+	position: fixed;
+	width: 100%;
+/*	height: auto;*/
+	padding: 10px;
+	top: 350px;
+	z-index: -10
+}
+/*styling of left image*/
+#love {
+	float: left;
+	width: 40%;
+	display: inline-block;
+}
+/*styling of right image*/
+#amst {
+	float: right;
+	width: 40%;
+	display: inline-block;
+	padding-right: 40px;
+}
+/*styling of profile page*/
+/*styling of text*/
+#profile {
+	font-family: arial narrow;
+	font-size: 30px;
+	line-height: 35px;
+	margin-left: 50px;
+}
+/*styling of images*/
+#pro {
+	float: left;
+	width: 40%;
+	display: block;
+	padding-right: 50px;
+	padding-top: 38px;
+}
+#pro img {
+	width: 100%;
+}
+/*styling the signature*/
+#sig {
+	font-family: Sacramento, cursive;
 }

@@ -1,23 +1,47 @@
+<div id="pro">
+	<img src="images/lovepark.jpg"><br>
+	<img src="images/iam.jpg">
+	<img src="images/boathouserow.jpg">
+	<img src="images/canal.jpg">
+	<img src="images/philadelphia-skyline.jpg">
+	<img src="images/amsterdam-skyline.jpg">
+</div>
 
-Username:
-<%= @currentUser.username %>
-
-First name:
-<%= @currentUser.fname %>
-
-Last name:
-<%= @currentUser.lname %>
-
-Email address:
-<%= @currentUser.email %>
-
-Gender:
-<%= @currentUser.gender %>
-
-From:
-<%= @currentUser.city %>
-
-<%= @currentUser.country %>
-
-Birthday:
-<%= @currentUser.birthday %>
+<div id="profile"> 
+	<h2>
+		Welcome to my world!
+	</h2>
+	<h2 id="sig" >
+		<i>-<%=@currentUser.fname %></i>
+	</h2>
+	<h3>
+		<span style="color: rgb(135, 19, 20)"><u>Profile</u></span>
+	</h3>
+	Name:
+	<%= @currentUser.fname %> <%= @currentUser.lname %>
+	<br>
+	Username:
+	<%= @currentUser.username %>
+	<br>
+	Email Address:
+	<%= @currentUser.email %>
+	<br>
+	Gender:
+	<%= @currentUser.gender %>
+	<br>
+	From:
+	<%= @currentUser.city %> in the: 
+	<%= @currentUser.country %>
+	<br>
+	Birthday:
+	<%= @currentUser.birthday %>
+	<h3>
+		<span style="color: rgb(135, 19, 20)"><u>Followers</u></span>
+	</h3>
+	<h3>
+		<span style="color: rgb(135, 19, 20)"><u>Following</u></span>
+	</h3>
+	<h3>
+		<span style="color: rgb(135, 19, 20)"><u>Posts</u></span>
+	</h3>
+</div>

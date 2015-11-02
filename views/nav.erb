@@ -1,0 +1,28 @@
+<nav id="menu">
+<%	@currentUser = User.find(session[:user_id]) %>
+	<ul>
+		<li>
+			<a href="profile" class="menu"><%= @currentUser.fname %></a> | 
+			<ul>
+				<li>
+					<a href="account" class="menu">Your Account</a> |
+				</li>
+				<li>
+					<a href="posts" class="menu">Your Posts</a> | 
+				</li>
+				<li>
+					<a href="/" class="menu">Sign Out</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="postfeed" class="menu">The Postfeed</a> |
+		</li>
+		<li>
+			<a href="http://visitphilly.com" target="_blank" class="menu">Check Out Philadelphia</a> |
+		</li>
+		<li>
+			<a href="http://iamsterdam.com" target="_blank" class="menu">Check Out Amsterdam</a>
+		</li>
+	</ul>
+</nav>

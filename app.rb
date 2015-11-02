@@ -11,6 +11,7 @@ set :database, "sqlite3:Micrapost_db.sqlite3"
 
 get '/' do 
 	@title = 'Home'
+	# session.clear
 	erb :home
 end
 
@@ -29,17 +30,31 @@ get '/profile' do
 
 	@currentUser = User.find(session[:user_id])
 	@title = @currentUser.fname
+	erb :nav
 	erb :profile
+
 end
 
 get '/account' do
+
+	@currentUser = User.find(session[:user_id])
 	@title = "Account"
 	erb :account
 end
 
 get '/postfeed' do
+
+	@currentUser = User.find(session[:user_id])
 	@title = "Feed"
+	erb :postfeed
 end
+
+get '/posts' do
+
+	@currentUser = User.find(session[:user_id])
+	@title = "Posts"
+	erb :posts
+end	
 
 # post for home login
 post '/login' do
@@ -52,8 +67,11 @@ post '/login' do
 	else
 		flash[:alert] = "There was a problem signing you in."
 	end
-	redirect '/home'
+	redirect '/'
 end
 
-
+post '/' do
+	session.clear
+	redirect '/'
+end
 
