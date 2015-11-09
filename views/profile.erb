@@ -60,4 +60,12 @@
 	<h3>
 		<span style="color: rgb(135, 19, 20)"><u>Posts</u></span>
 	</h3>
+	<% @top_three_posts.each do |post| %>
+	<h3>
+		Title: <%= post.title %>
+	</h3>
+		<br>
+		<%= post.body %>
+	<% end %>
+	
 </div>
