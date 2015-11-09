@@ -39,6 +39,12 @@ get '/users' do
 	erb :users
 end
 
+post '/profile' do
+	@currentUser = User.find(session[:user_id])
+	@new_post = Post.create(title: params[:title], body: params[:body], user_id: @currentUser.id)
+	redirect '/profile'
+end
+
 get '/account' do
 	@currentUser = User.find(session[:user_id])
 	@title = "Account"

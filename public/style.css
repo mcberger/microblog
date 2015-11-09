@@ -62,6 +62,7 @@
 /*	position: middle;*/
 	top: 75px;
 }
+
 /*try to style radio button on /signup, vertically center, make bigger, not working
 .radio {
 	line-height: 70px;
@@ -70,11 +71,19 @@
 	height: 2em;
 }*/
 /*labels*/
-.login {
+.login, .posttitle, .postbody {
 	line-height: 35px;
 	width: 200px;
 	font-size: 30px;
 	font-family: arial narrow;
+}
+
+.posttitle, .postbody {
+	width: 350px;
+}
+
+.postbody {
+	height: 200px;
 }
 /*sign up link on /home*/
 #signup {
