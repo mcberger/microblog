@@ -14,6 +14,22 @@
 	<h2 id="sig" >
 		<i>-<%=@currentUser.fname %></i>
 	</h2>
+
+	<h3>
+		<span style="color: rgb(135, 19, 20)"><u>New Post</u></span>
+	</h3>
+
+	<form method="POST" action="/profile">
+		<label for="title">Title:</label>
+		<br>
+		<input type="text" name="title" class="posttitle">
+		<br>
+		<label for="body">Body:</label>
+		<br>
+		<textarea name="body" class="postbody"></textarea>	
+		<br>
+		<button class="login">Post</button>
+	</form>
 	<h3>
 		<span style="color: rgb(135, 19, 20)"><u>Profile</u></span>
 	</h3>
