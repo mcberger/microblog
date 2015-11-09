@@ -11,7 +11,7 @@ set :database, "sqlite3:Micrapost_db.sqlite3"
 
 get '/' do 
 	@title = 'Home'
-	# session.clear
+	#session.clear
 	erb :home
 end
 
@@ -27,19 +27,33 @@ post '/signup' do
 end
 
 get '/profile' do
-
 	@currentUser = User.find(session[:user_id])
 	@title = @currentUser.fname
 	erb :nav
 	erb :profile
-
 end
 
 get '/account' do
-
 	@currentUser = User.find(session[:user_id])
 	@title = "Account"
 	erb :account
+end
+
+post '/account' do
+	@currentUser = User.find(session[:user_id])
+	if @currentUser.update_attributes(params[:user])
+		flash[:notice] = "Your account has been updated."
+	else
+		flash[:alert] = "There was a problem updating your account."
+	end
+	redirect "/profile"
+end
+
+delete '/account' do
+	@currentUser = User.find(session[:user_id])
+	@currentUser.destroy
+	session.clear
+	redirect "/"
 end
 
 get '/postfeed' do

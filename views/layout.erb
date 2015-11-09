@@ -12,7 +12,7 @@
 	<a href="/"><img src="/images/illams.jpg"></a>
 </div>
 <nav id="menu">
-<%	@currentUser = User.find(session[:user_id]) %>
+<% @currentUser = User.find(session[:user_id])  %>
 	<ul>
 		<li>
 			<a href="profile" class="menu"><%= @currentUser.fname %></a> | 
@@ -42,6 +42,18 @@
 		</li>
 	</ul>
 </nav>
+
+<% if flash[:notice] %>
+	<div class="flash notice">
+		<%=flash[:notice] %>
+	</div>
+<% end %>
+
+<% if flash[:alert] %>
+	<div class="flash alert">
+		<%=flash[:alert] %>
+	</div>
+<% end %>
 	<%= yield %>
 </body>
 </html>

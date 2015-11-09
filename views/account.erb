@@ -6,5 +6,49 @@
 	<h3>
 		<span style="color: rgb(135, 19, 20)">Review and control your account here.</span>
 	</h3>
+
+	<form method="POST" action="/account">
+		<label for="fname">Firstname</label>
+		<br>
+		<input type="text" name="[user]fname" class="login" value="<%= @currentUser.fname %>" >
+		<br>
+		<label for="lname">Lastname</label>
+		<br>
+		<input type="text" name="[user]lname" class="login" value="<%= @currentUser.lname %>">
+		<br>
+		<label for="username">Username</label>
+		<br>
+		<input type="text" name="[user]username" class="login" value="<%= @currentUser.username %>">
+		<br>
+		<label for="email">Email</label>
+		<br>
+		<input type="text" name="[user]email" class="login" value="<%= @currentUser.email %>">
+		<br>
+		<label for="password">Password</label>
+		<br>
+		<input type="password" name="[user]password" class="login" value="<%= @currentUser.password %>">
+		<br>
+		<label for="country">Country</label>
+		<br>
+		<input type="text" name="[user]country" class="login" value="<%= @currentUser.country %>">
+		<br>
+		<label for="city">City</label>
+		<br>
+		<input type="text" name="[user]city" class="login" value="<%= @currentUser.city %>">
+		<br>
+		<label for="birthday">Date of Birth</label>
+		<br>
+		<input type="date" name="[user]birthday" class="login" value="<%= @currentUser.birthday %>">
+		<br>
+		<label for="gender">Gender</label>
+		<br>
+		<input type="radio" name="[user]gender" value="male" class="radio" value="<%= @currentUser.gender %>">Male  
+		<input type="radio" name="[user]gender" value="female" class="radio" value="<%= @currentUser.gender %>">Female
+		<br><br>
+		<button class="login">Submit</button>
+		<br><br><br>
+		<button name="_method" value="delete">Delete account </button>
+	</form>
+
 	</center>
 </div>
