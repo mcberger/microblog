@@ -70,8 +70,14 @@ post '/login' do
 	redirect '/'
 end
 
-post '/' do
-	session.clear
+get '/signout' do
+	session[:user_id] = nil
+	flash[:notice] = "You have been successfully signed out."
 	redirect '/'
 end
+
+# post '/' do
+# 	session.clear
+# 	redirect '/'
+# end
 

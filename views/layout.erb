@@ -12,8 +12,9 @@
 	<a href="/"><img src="/images/illams.jpg"></a>
 </div>
 <nav id="menu">
-<%	@currentUser = User.find(session[:user_id]) %>
+<%	@currentUser = User.find_by_id(session[:user_id]) %>
 	<ul>
+	<% if @currentUser %>
 		<li>
 			<a href="profile" class="menu"><%= @currentUser.fname %></a> | 
 			<ul>
@@ -28,6 +29,7 @@
 				</li>
 			</ul>
 		</li>
+	<% end %>
 		<li>
 			<a href="postfeed" class="menu">The phIamsphere</a> |
 		</li>
@@ -38,7 +40,7 @@
 			<a href="http://iamsterdam.com" target="_blank" class="menu">Iamsterdam</a> | 
 		</li>
 		<li>
-			<a href="/" class="menu">Sign Out</a>
+			<a href="/signout" class="menu">Sign Out</a>
 		</li>
 	</ul>
 </nav>
