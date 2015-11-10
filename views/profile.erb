@@ -1,10 +1,10 @@
 <div id="pro">
-	<img src="images/lovepark.jpg"><br>
-	<img src="images/iam.jpg">
-	<img src="images/boathouserow.jpg">
-	<img src="images/canal.jpg">
-	<img src="images/philadelphia-skyline.jpg">
-	<img src="images/amsterdam-skyline.jpg">
+	<img src="/images/lovepark.jpg"><br>
+	<img src="/images/iam.jpg">
+	<img src="/images/boathouserow.jpg">
+	<img src="/images/canal.jpg">
+	<img src="/images/philadelphia-skyline.jpg">
+	<img src="/images/amsterdam-skyline.jpg">
 </div>
 
 <div id="profile"> 
@@ -12,45 +12,48 @@
 		Welcome to my world!
 	</h2>
 	<h2 id="sig" >
-		<i>-<%=@currentUser.fname %></i>
+		<i>-<%=@user.fname %></i>
 	</h2>
 
 	<h3>
 		<span style="color: rgb(135, 19, 20)"><u>New Post</u></span>
 	</h3>
 
-	<form method="POST" action="/profile">
-		<label for="title">Title:</label>
-		<br>
-		<input type="text" name="title" class="posttitle">
-		<br>
-		<label for="body">Body:</label>
-		<br>
-		<textarea name="body" class="postbody"></textarea>	
-		<br>
-		<button class="login">Post</button>
-	</form>
+	<% if @currentUser == @user %>
+
+		<form method="POST" action="/profile">
+			<label for="title">Title:</label>
+			<br>
+			<input type="text" name="title" class="posttitle">
+			<br>
+			<label for="body">Body:</label>
+			<br>
+			<textarea name="body" class="postbody"></textarea>	
+			<br>
+			<button class="login">Post</button>
+		</form>
+	<% end %>
 	<h3>
 		<span style="color: rgb(135, 19, 20)"><u>Profile</u></span>
 	</h3>
 	Name:
-	<%= @currentUser.fname %> <%= @currentUser.lname %>
+	<%= @user.fname %> <%= @user.lname %>
 	<br>
 	Username:
-	<%= @currentUser.username %>
+	<%= @user.username %>
 	<br>
 	Email Address:
-	<%= @currentUser.email %>
+	<%= @user.email %>
 	<br>
 	Gender:
-	<%= @currentUser.gender %>
+	<%= @user.gender %>
 	<br>
 	From:
-	<%= @currentUser.city %> in the: 
-	<%= @currentUser.country %>
+	<%= @user.city %> in the: 
+	<%= @user.country %>
 	<br>
 	Birthday:
-	<%= @currentUser.birthday %>
+	<%= @user.birthday %>
 	<h3>
 		<span style="color: rgb(135, 19, 20)"><u>Followers</u></span>
 	</h3>

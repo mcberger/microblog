@@ -28,11 +28,26 @@ end
 
 get '/profile' do
 	@currentUser = User.find(session[:user_id])
-	@top_three_posts = @currentUser.posts.order(id: :desc).limit 3
+	@user = @currentUser
+	@top_three_posts = @user.posts.order(id: :desc).limit 3
 	@title = @currentUser.fname
-	erb :nav
 	erb :profile
 end
+
+get '/profiles/:id' do
+	@currentUser = User.find(session[:user_id])
+	@user = User.find(params[:id])
+	@top_three_posts = @user.posts.order(id: :desc).limit 3
+	@title = @currentUser.fname
+	erb :profile
+end
+
+# get '/profiles/:id' do
+# 	@currentUser =User.find(session[:us])
+# 	@top_three_posts = @currentUser.posts.order(id: :desc).limit 3
+# 	@title = @User.find(session[:user_id])
+# 	erb :profile
+# end
 
 get '/users' do
 	@users = User.all
