@@ -26,17 +26,17 @@ post '/signup' do
 	redirect "/"
 end
 
+get '/users' do
+	@users = User.all
+	erb :users
+end
+
 get '/profile' do
 	@currentUser = User.find(session[:user_id])
 	@top_three_posts = @currentUser.posts.order(id: :desc).limit 3
 	@title = @currentUser.fname
 	erb :nav
 	erb :profile
-end
-
-get '/users' do
-	@users = User.all
-	erb :users
 end
 
 post '/profile' do
