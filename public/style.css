@@ -160,3 +160,17 @@ images layout*/
 #sig {
 	font-family: Sacramento, cursive;
 }
+/*styling of the follow me button*/
+.follow, #follow {
+	display: inline-block;
+}
+#follow button {
+	background-color: black;
+	color: white;
+	line-height: 35px;
+	width: 200px;
+	font-size: 30px;
+	font-family: arial narrow;
+	border-color: rgb(135, 19, 20);
+
+}
