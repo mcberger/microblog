@@ -6,10 +6,12 @@
 	<h3>
 		Make friends.
 	</h3>
+</div>
+<div>
 	<% @users.each do |user| %>
 </div>
 	<div>
-		<%= user.fname + " " + user.lname %>
+		<a href="/profiles/<%= user.id %>"><%= user.fname + " " + user.lname %></a>
 	</div>
 <div>	
 	<% end %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
 	<title>
 		<%= @title %>
@@ -16,28 +16,31 @@
 	<ul>
 	<% if @currentUser %>
 		<li>
-			<a href="profile" class="menu"><%= @currentUser.fname %></a> | 
+			<a href="/profile" class="menu"><%= @currentUser.fname %></a> | 
 			<ul>
 				<li>
-					<a href="phiams" class="menu">Your phIams</a> |
+					<a href="/phiams" class="menu">Your phIams</a> |
 				</li>
 				<li>
-					<a href="posts" class="menu">Your Posts</a> | 
+					<a href="/posts" class="menu">Your Posts</a> | 
 				</li>
 				<li>
-					<a href="account" class="menu">Your Account</a>
+					<a href="/account" class="menu">Your Account</a>
 				</li>
 			</ul>
 		</li>
 	<% end %>
 		<li>
-			<a href="postfeed" class="menu">The phIamsphere</a> |
+			<a href="/users" class="menu">phIams</a> |
 		</li>
 		<li>
-			<a href="http://visitphilly.com" target="_blank" class="menu">philadelphIam</a> |
+			<a href="/postfeed" class="menu">The phIamsphere</a> |
 		</li>
 		<li>
-			<a href="http://iamsterdam.com" target="_blank" class="menu">Iamsterdam</a> | 
+			<a href="http://visitphilly.com" target="_blank" class="menu">Check out Philadelphia</a> |
+		</li>
+		<li>
+			<a href="http://iamsterdam.com" target="_blank" class="menu">Check out Amsterdam</a> | 
 		</li>
 		<li>
 			<a href="/signout" class="menu">Sign Out</a>
