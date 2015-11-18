@@ -11,7 +11,6 @@ set :database, "sqlite3:Micrapost_db.sqlite3"
 
 get '/' do 
 	@title = 'Home'
-	#session.clear
 	erb :home
 end
 
@@ -47,14 +46,6 @@ get '/profiles/:id' do
 	erb :profile
 end
 
-# get '/profiles/:id' do
-# 	@currentUser =User.find(session[:us])
-# 	@top_three_posts = @currentUser.posts.order(id: :desc).limit 3
-# 	@title = @User.find(session[:user_id])
-# 	erb :profile
-# end
-
-
 post '/profile' do
 	@currentUser = User.find(session[:user_id])
 	@new_post = Post.create(title: params[:title], body: params[:body], user_id: @currentUser.id)
@@ -85,7 +76,6 @@ delete '/account' do
 end
 
 get '/postfeed' do
-
 	@currentUser = User.find(session[:user_id])
 	@posts = Post.order(id: :desc)
 	@title = "Feed"
@@ -93,8 +83,9 @@ get '/postfeed' do
 end
 
 get '/posts' do
-
 	@currentUser = User.find(session[:user_id])
+	users_posts = Post.where(user_id: session[:user_id])
+	@posts = users_posts.order(id: :desc)
 	@title = "Posts"
 	erb :posts
 end	
@@ -131,13 +122,4 @@ post '/follow/:id' do
 	end
 	redirect '/profile'
 end
-
-# def following
-# 	Followership.where(:follower_id=>:self.id).not_blocked
-# end
-
-# post '/' do
-# 	session.clear
-# 	redirect '/'
-# end
 

@@ -8,57 +8,44 @@
 	</title>
 </head>
 <body>
-<div id="banner"> 
-	<a href="/"><img src="/images/illams.jpg"></a>
-</div>
-<nav id="menu">
-<%	@currentUser = User.find_by_id(session[:user_id]) %>
-	<ul>
-	<% if @currentUser %>
-		<li>
-			<a href="/profile" class="menu"><%= @currentUser.fname %></a> | 
-			<ul>
-				<li>
-					<a href="/phiams" class="menu">Your phIams</a> |
-				</li>
-				<li>
-					<a href="/posts" class="menu">Your Posts</a> | 
-				</li>
-				<li>
-					<a href="/account" class="menu">Your Account</a>
-				</li>
-			</ul>
-		</li>
-	<% end %>
-		<li>
-			<a href="/users" class="menu">phIams</a> |
-		</li>
-		<li>
-			<a href="/postfeed" class="menu">The phIamsphere</a> |
-		</li>
-		<li>
-			<a href="http://visitphilly.com" target="_blank" class="menu">Check out Philadelphia</a> |
-		</li>
-		<li>
-			<a href="http://iamsterdam.com" target="_blank" class="menu">Check out Amsterdam</a> | 
-		</li>
-		<li>
-			<a href="/signout" class="menu">Sign Out</a>
-		</li>
-	</ul>
-</nav>
-
-<% if flash[:notice] %>
-	<div class="flash notice">
-		<%=flash[:notice] %>
+	<div id="banner"> 
+		<a href="/"><img src="/images/illams.jpg"></a>
 	</div>
-<% end %>
 
-<% if flash[:alert] %>
-	<div class="flash alert">
-		<%=flash[:alert] %>
-	</div>
-<% end %>
+	<nav id="menu">
+		<%	@currentUser = User.find_by_id(session[:user_id]) %>
+		<ul>
+			<% if @currentUser %>
+				<li> <a href="/profile" class="menu"><%= @currentUser.fname %></a> | 
+					<ul>
+						<li> <a href="/posts" class="menu">Your Posts</a> | </li>
+						<li> <a href="/account" class="menu">Your Account</a> </li>	
+					</ul>
+				</li>
+			<% end %>
+			<li> <a href="/users" class="menu">phIams</a> | </li>
+			<li> <a href="/postfeed" class="menu">The phIamsphere</a> | </li>
+			<li> <a href="http://visitphilly.com" target="_blank" class="menu">Check out Philadelphia</a> | </li>
+			<li> <a href="http://iamsterdam.com" target="_blank" class="menu">Check out Amsterdam</a> | </li>
+			<li> <a href="/signout" class="menu">Sign Out</a> </li>
+		</ul>
+	</nav>
+
+	<center>
+		<% if flash[:notice] %>
+			<div class="flash-notice">
+				<%=flash[:notice] %>
+			</div>
+		<% end %>
+
+		<% if flash[:alert] %>
+			<div class="flash-alert">
+				<%=flash[:alert] %>
+			</div>
+		<% end %>
+	</center>
+
 	<%= yield %>
+
 </body>
 </html>

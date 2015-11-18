@@ -1,19 +1,11 @@
 <center>
-<div id="profile">
-	<h2>
-		Here are all the phIams.
-	</h2>
-	<h3>
-		Make friends.
-	</h3>
-</div>
-<div>
-	<% @users.each do |user| %>
-</div>
-	<div>
-		<a href="/profiles/<%= user.id %>"><%= user.fname + " " + user.lname %></a>
+	<div id="profile">
+		<h2> Here are all the phIams. </h2>
+		<h3> Make friends. </h3>
+
+		<% @users.each do |user| %>
+			<a href="/profiles/<%= user.id %>"> <%= user.fname + " " + user.lname %> </a>
+			<br>	
+		<% end %>
 	</div>
-<div>	
-	<% end %>
-</div>
 </center>

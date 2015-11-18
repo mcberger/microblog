@@ -12,16 +12,14 @@
 		Welcome to my world! 
 		<% if @currentUser != @user %>
 		<form method="POST" action="/follow/<%= @user.id %>" id="follow">
-		<button>Follow Me!</button></a>
+			<button>Follow Me!</button>
 		<% end %>
 	</h2>
-	<h2 id="sig" >
-		<i>-<%=@user.fname %></i>
-	</h2>
+
+	<h2 id="sig" > <i>-<%=@user.fname %></i> </h2>
+
 	<% if @currentUser == @user %>
-	<h3>
-		<span style="color: rgb(135, 19, 20)"><u>New Post</u></span>
-	</h3>
+		<h3> <span style="color: rgb(135, 19, 20)"> <u>New Post</u> </span> </h3>
 		<form method="POST" action="/profile">
 			<label for="title">Title:</label>
 			<br>
@@ -34,9 +32,9 @@
 			<button class="login">Post</button>
 		</form>
 	<% end %>
-	<h3>
-		<span style="color: rgb(135, 19, 20)"><u>Profile</u></span>
-	</h3>
+
+	<h3> <span style="color: rgb(135, 19, 20)"> <u>Profile</u> </span> </h3>
+	
 	Name:
 	<%= @user.fname %> <%= @user.lname %>
 	<br>
@@ -55,31 +53,29 @@
 	<br>
 	Birthday:
 	<%= @user.birthday %>
-	<h3>
-		<span style="color: rgb(135, 19, 20)"><u>Followers</u></span>
-	</h3>
-	<h2>
+
+	<h3> <span style="color: rgb(135, 19, 20)"> <u>Followers</u> </span> </h3>
+	
+	<h4>
 		<% @user.followers.each do |follower| %>
 			<a href="/profiles/<%= follower.id %>"><%= follower.fname %></a>
+			<br>
 		<% end %> 
-	</h2>
-	<h3>
-		<span style="color: rgb(135, 19, 20)"><u>Following</u></span>
-	</h3>
-	<h2>
+	</h4>
+
+	<h3> <span style="color: rgb(135, 19, 20)"> <u>Following</u> </span> </h3>
+	
+	<h4>
 		<% @user.followees.each do |followee| %>
 			<a href="/profiles/<%= followee.id %>"><%= followee.fname %></a>
+			<br>
 		<% end %> 
-	</h2>
-	<h3>
-		<span style="color: rgb(135, 19, 20)"><u>Posts</u></span>
-	</h3>
+	</h4>
+
+	<h3> <span style="color: rgb(135, 19, 20)"> <u>Posts</u> </span> </h3>
 	<% @top_three_posts.each do |post| %>
-	<h3>
-		Title: <%= post.title %>
-	</h3>
-		<br>
+		<h3> Title: <%= post.title %> </h3>
 		<%= post.body %>
 	<% end %>
-	
+
 </div>

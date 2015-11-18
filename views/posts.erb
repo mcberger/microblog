@@ -1,11 +1,17 @@
-<div id="profile">
-	<center>
-	<h2>
-		Hey <a href="/profile"><%= @currentUser.fname %></a>, check out this space:
-	</h2>
+<center id="profile">
+	<h2> Hey <a href="/profile"><%= @currentUser.fname %></a>, check out this space: </h2>
+	<h3 style="color: rgb(135, 19, 20)">All your posts in one neat place! </h3>
+</center>
+
+<img src="/images/lovepark.jpg" id="pro">
+
+<div id="myposts">
+	<% @posts.each do |post| %>
 	<h3>
-		<span style="color: rgb(135, 19, 20)">All your posts in one neat place!</span>
+		Title: <%= post.title %>
 	</h3>
-	</center>
-	<img src="/images/lovepark.jpg" id="pro">
+		<%= post.body %>
+	<% end %>
 </div>
+
+
